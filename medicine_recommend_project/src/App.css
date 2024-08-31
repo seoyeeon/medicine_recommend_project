@@ -17,20 +17,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
 }
 
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+
+  gap: 60px;
+  margin-top: 50px;
   margin-bottom: 20px;
 }
 
 .App-button {
   display: inline-block;
-  padding: 15px 30px;
+  padding: 20px 40px;
   font-size: 18px;
   color: white;
   background-color: #61dafb;

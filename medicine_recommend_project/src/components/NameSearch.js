@@ -33,8 +33,8 @@ function NameSearch() {
         </form>
         <div className="button-group">
           <button onClick={() => handleButtonClick('medicine1')} className="nav-button">
-            <img src="image1-url.jpg" alt="medicine 1" className="button-image" />
-            약 1
+            <img src="Tylenol.jpg" alt="Tylenol" className="button-image" />
+            타이레놀
           </button>
           <button onClick={() => handleButtonClick('medicine2')} className="nav-button">
             <img src="image2-url.jpg" alt="medicine 2" className="button-image" />
