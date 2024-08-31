@@ -1,0 +1,50 @@
+/* SymptomsCheck.css */
+.symptoms-check-container {
+    padding: 20px;
+  }
+
+.home-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .symptoms-check-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .checkbox-group {
+    margin: 20px 0;
+  }
+  
+  .checkbox-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .submit-button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
