@@ -1,6 +1,5 @@
-// src/components/SearchResults.js
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import './SearchResults.css';
 
 function SearchResults() {
@@ -18,13 +17,17 @@ function SearchResults() {
   return (
     <div className="search-results-container">
       <header className="search-results-header">
-        <h1>다음 키워드로 검색한 결과입니다: "{query}"</h1>
+        <img src="logo1.png" className="App-logo" alt="logo" />
+        <Link to="/" className="home-button">Home</Link>
       </header>
-      <ul className="results-list">
-        {results.map((result, index) => (
-          <li key={index} className="result-item">{result}</li>
-        ))}
-      </ul>
+      <main className="search-results-main">
+        <h1>다음 키워드로 검색한 결과입니다: "{query}"</h1>
+        <ul className="results-list">
+          {results.map((result, index) => (
+            <li key={index} className="result-item">{result}</li>
+          ))}
+        </ul>
+      </main>
     </div>
   );
 }

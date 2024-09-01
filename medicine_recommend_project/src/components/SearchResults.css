@@ -1,34 +1,54 @@
-/* src/components/SearchResults.css */
-.search-results-container {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .search-results-header {
-    margin-bottom: 20px;
-  }
+/* SearchResults.css */
+body {
+  font-family: 'GangwonEduPowerExtraBoldA', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #a5d0b5;
+}
 
-  .home-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #a5d0b5;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .results-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .result-item {
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-  }
-  
+.search-results-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.search-results-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+.App-logo {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.home-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #0c866dcb;
+}
+
+.search-results-main {
+  margin-top: 50px;
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+}
+
+.result-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}

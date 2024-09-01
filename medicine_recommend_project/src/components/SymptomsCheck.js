@@ -26,7 +26,7 @@ function SymptomsCheck() {
         <Link to="/" className="home-button">Home</Link>
       </header>
       <main className="symptoms-check-main">
-        <h2 className="symptoms-title">증상을 선택하세요</h2>
+        <h2 className="symptoms-title">어디가 불편하신가요?</h2>
         <div className="checkbox-group">
           {['Fever', 'Cough', 'Headache', 'Fatigue'].map((symptom, index) => (
             <label
