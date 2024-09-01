@@ -18,6 +18,7 @@ function NameSearch() {
   return (
     <div className="name-search-container">
       <header className="name-search-header">
+        <img src="logo1.png" className="App-logo" alt="logo" />
         <Link to="/" className="home-button">Home</Link>
       </header>
       <main className="name-search-main">
@@ -29,7 +30,14 @@ function NameSearch() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button type="submit" className="search-button">검색</button>
+          {/* 버튼을 이미지로 대체 */}
+          <img
+            src="search-icon.png"  /* 원하는 이미지 파일 경로로 변경 */
+            alt="검색"
+            className="search-button-image"
+            onClick={handleSearch}
+            style={{ cursor: 'pointer' }}  /* 클릭 가능한 상태로 만들기 위해 커서 스타일 추가 */
+          />
         </form>
         <div className="button-group">
           <button onClick={() => handleButtonClick('medicine1')} className="nav-button">

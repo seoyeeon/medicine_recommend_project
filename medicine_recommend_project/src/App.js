@@ -12,7 +12,7 @@ function Home() {
     <div className="App-main">
       <header className="App-header">
         <img src="logo1.png" className="App-logo" alt="logo" />
-        <div className="title">약 추천 프로그램</div>
+        <div className="title">Medicine Mate: MM</div>
       </header>
       <div className="button-container">
         <Link to="/NameSearch" className="App-button">이름으로 검색</Link>

@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'GangwonEduPowerExtraBoldA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'GangwonEduPowerExtraBoldA';
+}
+
 .App {
   text-align: center;
 }
@@ -19,6 +30,10 @@
   align-items: center;
   height: 100vh;
   background-color: #a5d0b5;
+}
+
+.title {
+  font-size: 50px;
 }
 
 .button-container {

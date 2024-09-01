@@ -1,50 +1,102 @@
-/* SymptomsCheck.css */
+body {
+  font-family: 'GangwonEduPowerExtraBoldA', sans-serif; /* 전체 페이지에 폰트 적용 */
+  margin: 0; /* 기본 마진 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+  background-color: #a5d0b5; /* 기존 배경색 유지 */
+}
+
 .symptoms-check-container {
-    padding: 20px;
-  }
+  padding: 20px;
+  text-align: center; /* NameSearch와 동일하게 중앙 정렬 */
+}
+
+.symptoms-check-header {
+  display: flex; /* flexbox로 헤더 레이아웃 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  align-items: center; /* 수직 가운데 정렬 추가 */
+  padding: 10px; /* NameSearch와 동일한 패딩 */
+}
 
 .home-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #61dafb;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .symptoms-check-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .checkbox-group {
-    margin: 20px 0;
-  }
-  
-  .checkbox-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-  
-  .submit-button {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
-  
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px; /* 홈 버튼 위치 조정 */
+}
+
+.home-button:hover {
+  background-color: #0c866dcb; /* NameSearch와 동일한 호버 색상 */
+}
+
+.symptoms-check-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* 상단에 약간의 간격 추가 */
+}
+
+.symptoms-title {
+  background-color: #fff; /* 배경색 설정 */
+  padding: 10px 20px; /* 내부 여백 설정 */
+  border-radius: 15px; /* 둥근 모서리 설정 */
+  margin-bottom: 20px; /* 아래쪽 여백 추가 */
+  font-size: 24px; /* 폰트 크기 설정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 박스 그림자 추가 */
+}
+
+.checkbox-group {
+  margin: 20px 0;
+  display: flex; /* 플렉스박스를 사용하여 정렬 */
+  flex-wrap: wrap; /* 박스가 여러 줄로 배치될 수 있도록 설정 */
+  justify-content: center; /* 가운데 정렬 */
+  gap: 20px; /* 박스 사이의 간격 */
+}
+
+.checkbox-container {
+  background-color: #fff; /* 기본 상태에서 작은 박스의 배경색 */
+  padding: 20px; /* 내부 여백 */
+  border: 2px solid #00a000; /* 초록색 테두리 */
+  border-radius: 10px; /* 둥근 모서리 */
+  cursor: pointer; /* 마우스를 올리면 커서가 포인터로 변경되도록 */
+  width: 120px; /* 박스의 고정 너비 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 박스 그림자 추가 */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* 배경색 변경 트랜지션 */
+}
+
+.checkbox-container.checked {
+  background-color: #d1e7dd; /* 체크된 상태에서의 배경색 */
+  border-color: #0f5132; /* 체크된 상태에서의 테두리 색상 */
+}
+
+.checkbox-container input[type="checkbox"] {
+  display: none; /* 기본 체크박스를 숨기기 */
+}
+
+.checkbox-container label {
+  display: block; /* 레이블을 블록 요소로 설정하여 클릭 영역 확장 */
+  font-size: 18px; /* 레이블 텍스트 크기 설정 */
+  cursor: pointer; /* 레이블에 포인터 커서 추가 */
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffabab;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* 버튼 상단에 간격 추가 */
+}
+
+.submit-button:hover {
+  background-color: #ed6c6c;
+}
