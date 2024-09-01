@@ -11,7 +11,7 @@ function Home() {
   return (
     <div className="App-main">
       <header className="App-header">
-        <img src="your-logo-url.png" className="App-logo" alt="logo" />
+        <img src="logo1.png" className="App-logo" alt="logo" />
         <div className="title">약 추천 프로그램</div>
       </header>
       <div className="button-container">
