@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'GangwonEduPowerExtraBoldA';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-family: 'LeeSeoyun';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -33,7 +33,7 @@ body {
 }
 
 .title {
-  font-size: 50px;
+  font-size: 60px;
 }
 
 .button-container {
@@ -48,7 +48,7 @@ body {
 .App-button {
   display: inline-block;
   padding: 20px 40px;
-  font-size: 18px;
+  font-size: 20px;
   color: white;
   background-color: #36b09a;
   border: none;
@@ -56,7 +56,7 @@ body {
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: Arial, sans-serif;
+
 }
 
 .App-button:hover {
