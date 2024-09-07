@@ -1,10 +1,7 @@
 /* MedicineInfo.css */
-body {
-    font-family: 'GangwonEduPowerExtraBoldA', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #a5d0b5;
-  }
+* {
+  font-family: 'LeeSeoyun'; /* 모든 요소에 폰트 적용 */
+}
   
   .medicine-info-container {
     padding: 20px;
@@ -20,23 +17,6 @@ body {
   
   .App-logo {
     height: 40px;
-    margin-right: 20px;
-  }
-  
-  .home-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color:#a5d0b5;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .home-button:hover {
-    background-color: #0c866dcb;
   }
   
   .medicine-info-main {

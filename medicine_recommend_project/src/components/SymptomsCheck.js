@@ -22,8 +22,9 @@ function SymptomsCheck() {
   return (
     <div className="symptoms-check-container">
       <header className="symptoms-check-header">
-        <img src="logo1.png" className="App-logo" alt="logo" />
-        <Link to="/" className="home-button">Home</Link>
+        <Link to="/">
+          <img src="logo1.png" className="App-logo" alt="logo" />
+        </Link>
       </header>
       <main className="symptoms-check-main">
         <h2 className="symptoms-title">어디가 불편하신가요?</h2>

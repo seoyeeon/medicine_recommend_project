@@ -15,22 +15,7 @@ body {
   display: flex;
   justify-content: flex-start;
   padding: 10px;
-}
-
-.home-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: #a5d0b5;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.home-button:hover {
-  background-color: #0c866dcb;
+  color : #a5d0b5;
 }
 
 .name-search-main {

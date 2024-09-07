@@ -17,8 +17,9 @@ function SearchResults() {
   return (
     <div className="search-results-container">
       <header className="search-results-header">
-        <img src="logo1.png" className="App-logo" alt="logo" />
-        <Link to="/" className="home-button">Home</Link>
+        <Link to="/">
+          <img src="logo1.png" className="App-logo" alt="logo" />
+        </Link>
       </header>
       <main className="search-results-main">
         <h1>다음 키워드로 검색한 결과입니다: "{query}"</h1>

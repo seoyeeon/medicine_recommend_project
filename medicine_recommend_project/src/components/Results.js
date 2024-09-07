@@ -14,8 +14,9 @@ function Results() {
   return (
     <div className="results-container">
       <header className="results-header">
-        <img src="logo1.png" className="App-logo" alt="logo" />
-        <Link to="/" className="home-button">Home</Link>
+        <Link to="/">
+          <img src="logo1.png" className="App-logo" alt="logo" />
+        </Link>
       </header>
       <main className="results-main">
         <h2>선택한 증상으로 검색한 결과입니다:</h2>

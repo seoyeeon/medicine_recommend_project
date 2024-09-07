@@ -1,6 +1,6 @@
 /* SearchResults.css */
 body {
-  font-family: 'GangwonEduPowerExtraBoldA', sans-serif;
+  font-family: 'LeeSeoyun', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #a5d0b5;
@@ -20,23 +20,6 @@ body {
 
 .App-logo {
   height: 40px;
-  margin-right: 20px;
-}
-
-.home-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: #61dafb;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.home-button:hover {
-  background-color: #0c866dcb;
 }
 
 .search-results-main {

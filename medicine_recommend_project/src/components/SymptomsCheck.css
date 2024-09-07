@@ -1,5 +1,5 @@
 body {
-  font-family: 'GangwonEduPowerExtraBoldA', sans-serif; /* 전체 페이지에 폰트 적용 */
+  font-family: 'LeeSeoyun', sans-serif; /* 전체 페이지에 폰트 적용 */
   margin: 0; /* 기본 마진 제거 */
   padding: 0; /* 기본 패딩 제거 */
   background-color: #a5d0b5; /* 기존 배경색 유지 */
@@ -15,23 +15,6 @@ body {
   justify-content: flex-start; /* 왼쪽 정렬 */
   align-items: center; /* 수직 가운데 정렬 추가 */
   padding: 10px; /* NameSearch와 동일한 패딩 */
-}
-
-.home-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: #61dafb;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-left: 10px; /* 홈 버튼 위치 조정 */
-}
-
-.home-button:hover {
-  background-color: #0c866dcb; /* NameSearch와 동일한 호버 색상 */
 }
 
 .symptoms-check-main {

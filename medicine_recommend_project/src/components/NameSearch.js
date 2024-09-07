@@ -18,8 +18,9 @@ function NameSearch() {
   return (
     <div className="name-search-container">
       <header className="name-search-header">
-        <img src="logo1.png" className="App-logo" alt="logo" />
-        <Link to="/" className="home-button">Home</Link>
+        <Link to="/">
+          <img src="logo1.png" className="App-logo" alt="logo" />
+        </Link>
       </header>
       <main className="name-search-main">
         <form onSubmit={handleSearch}>
