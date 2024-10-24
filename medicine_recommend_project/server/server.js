@@ -3,20 +3,23 @@ const mysql = require('mysql2');
 const path = require('path');
 const cors = require('cors');
 const app = express();
-const port = 3000; // 사용할 포트
+const port = 3000;
 
-// 헤더 크기 제한을 늘리는 옵션 설정
-app.use(express.json({ limit: '1mb' })); // 요청 본문 크기 제한
-app.use(express.urlencoded({ limit: '1mb', extended: true })); // URL 인코딩 요청 크기 제한
+// JSON 요청 본문 크기 제한 설정
+app.use(express.json({ limit: '1mb' }));
+app.use(express.urlencoded({ limit: '1mb', extended: true }));
 
 // CORS 허용
-app.use(cors());
+// app.use(cors());
+// const cors = require('cors');
+app.use(cors({ origin: 'http://localhost:3000' }));
+
 
 // MySQL 연결 설정
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '1234',  // 실제 MySQL 비밀번호
+  password: '1234',
   database: 'MedicineDB',
 });
 
@@ -28,11 +31,12 @@ db.connect(err => {
   console.log('MySQL 연결 성공!');
 });
 
-// 정적 파일 서빙 (약 이미지 파일들)
+// 정적 파일 제공 (이미지 및 React 빌드 파일)
 const imagesDirectory = path.join(__dirname, '..', 'medi_database', 'medi_jpg', 'images');
 app.use('/images', express.static(imagesDirectory));
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
-// API 엔드포인트 (증상에 따른 의약품 정보 조회)
+// API 엔드포인트 (증상에 따른 약 정보 조회)
 app.post('/api/medicines/symptoms', (req, res) => {
   const { symptoms } = req.body;
 
@@ -40,17 +44,14 @@ app.post('/api/medicines/symptoms', (req, res) => {
     return res.status(400).send('증상이 선택되지 않았습니다.');
   }
 
-  const queries = symptoms.map(symptom => {
-    return `Effects LIKE '%${symptom}%'`;
-  }).join(' OR '); // "OR" 조건을 사용하여 쿼리 생성
+  const queries = symptoms.map(symptom => `Effects LIKE '%${symptom}%'`).join(' OR ');
 
   db.query(`SELECT * FROM OTC_Medicines WHERE ${queries}`, (err, results) => {
     if (err) {
       console.error('데이터베이스 쿼리 오류:', err);
       return res.status(500).send('데이터베이스 쿼리 오류');
     }
-    console.log('API 요청 수신:', symptoms);
-    res.json(results); // 결과 반환
+    res.json(results);
   });
 });
 
@@ -63,12 +64,11 @@ app.get('/api/medicines', (req, res) => {
     if (err) {
       return res.status(500).send('데이터베이스 쿼리 오류');
     }
-    console.log('데이터베이스 쿼리 성공:', results);
     res.json(results);
   });
 });
 
-// API 엔드포인트 (약 이름으로 특정 약 정보 조회)
+// API 엔드포인트 (특정 약 정보 조회)
 app.get('/api/medicines/:medicineName', (req, res) => {
   const medicineName = req.params.medicineName;
   const sql = 'SELECT * FROM OTC_Medicines WHERE Medicine_Name LIKE ?';
@@ -77,15 +77,11 @@ app.get('/api/medicines/:medicineName', (req, res) => {
     if (err) {
       return res.status(500).send('데이터베이스 쿼리 오류');
     }
-    console.log('API 요청 수신:', medicineName);
-    res.json(results.length > 0 ? results[0] : null); // 약 정보를 객체로 반환, 결과가 없을 경우 null 반환
+    res.json(results.length > 0 ? results[0] : null);
   });
 });
 
-// React 정적 파일 서빙 (빌드된 파일)
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
-
-// React 앱으로 라우팅
+// 모든 경로에 대해 React 앱으로 라우팅 (404 처리 포함)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });

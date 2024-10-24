@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios'; // Axios 임포트
 import './MedicineInfo.css'; // 스타일 파일을 추가합니다.
-import logo from '../assets/logo1.png';
-
 
 function MedicineInfo() {
   const { medicineName } = useParams(); // URL 파라미터에서 약 이름 가져오기
@@ -20,8 +18,6 @@ function MedicineInfo() {
         // API URL 및 이미지 경로 로그 출력
         console.log('API URL:', process.env.REACT_APP_API_URL);
         console.log('Image Path:', response.data.Image_Path);
-        console.log(`Image Path: /images/${medicine.Image_Path}`);
-
         
       } catch (err) {
         setError('약 정보를 불러오는 데 오류가 발생했습니다.');
@@ -41,7 +37,7 @@ function MedicineInfo() {
       <header className="medicine-info-header">
         <Link to="/">
           {/* 절대 경로를 사용하여 public 폴더의 logo1.png를 불러옵니다. */}
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src="/logo1.png" className="App-logo" alt="logo" />
         </Link>
       </header>
       <main className="medicine-info-main">
