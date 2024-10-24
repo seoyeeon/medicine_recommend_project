@@ -1,37 +1,25 @@
 import React from 'react';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
-import './Results.css'; // CSS 파일을 추가로 임포트합니다.
+import { useLocation } from 'react-router-dom';
 
 function Results() {
   const location = useLocation();
-  const navigate = useNavigate();
-  const { selectedSymptoms } = location.state || { selectedSymptoms: [] };
-
-  const handleSymptomClick = (symptom) => {
-    navigate(`/medicine-info/${symptom}`);
-  };
+  const { data } = location.state || { data: [] }; // 안전하게 데이터 가져오기
 
   return (
-    <div className="results-container">
-      <header className="results-header">
-        <Link to="/">
-          <img src="logo1.png" className="App-logo" alt="logo" />
-        </Link>
-      </header>
-      <main className="results-main">
-        <h2>선택한 증상으로 검색한 결과입니다:</h2>
+    <div>
+      <h2>결과</h2>
+      {data.length > 0 ? (
         <ul>
-          {selectedSymptoms.map((symptom, index) => (
-            <li
-              key={index}
-              style={{ cursor: 'pointer', listStyleType: 'none', padding: '10px', borderBottom: '1px solid #ccc' }}
-              onClick={() => handleSymptomClick(symptom)}
-            >
-              {symptom}
+          {data.map((medicine, index) => (
+            <li key={index}>
+              <strong>{medicine.Medicine_Name}</strong>
+              <p>효능: {medicine.Effects}</p>
             </li>
           ))}
         </ul>
-      </main>
+      ) : (
+        <p>해당하는 의약품이 없습니다.</p>
+      )}
     </div>
   );
 }

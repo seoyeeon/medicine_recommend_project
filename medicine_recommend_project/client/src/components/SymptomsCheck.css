@@ -7,21 +7,21 @@ body {
 
 .symptoms-check-container {
   padding: 20px;
-  text-align: center; /* NameSearch와 동일하게 중앙 정렬 */
+  text-align: center; /* 중앙 정렬 */
 }
 
 .symptoms-check-header {
   display: flex; /* flexbox로 헤더 레이아웃 */
   justify-content: flex-start; /* 왼쪽 정렬 */
   align-items: center; /* 수직 가운데 정렬 추가 */
-  padding: 10px; /* NameSearch와 동일한 패딩 */
+  padding: 10px; /* 패딩 */
 }
 
 .symptoms-check-main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px; /* 상단에 약간의 간격 추가 */
+  margin-top: 20px; /* 상단 간격 추가 */
 }
 
 .checkbox-group {
@@ -55,7 +55,7 @@ body {
 
 .checkbox-container label {
   display: block; /* 레이블을 블록 요소로 설정하여 클릭 영역 확장 */
-  font-size: 18px; /* 레이블 텍스트 크기 설정 */
+  font-size: 20px; /* 레이블 텍스트 크기 설정 (변경된 부분) */
   cursor: pointer; /* 레이블에 포인터 커서 추가 */
 }
 

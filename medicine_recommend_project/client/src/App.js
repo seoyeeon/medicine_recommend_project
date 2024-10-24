@@ -31,7 +31,8 @@ function App() {
         <Route path="/SymptomsCheck" element={<SymptomsCheck />} />
         <Route path="/search-results" element={<SearchResults />} />
         <Route path="/Results" element={<Results />} />
-        <Route path="/MedicineInfo" element={<MedicineInfo />} />
+        <Route path="/MedicineInfo/:medicineName" element={<MedicineInfo />} />
+
       </Routes>
     </Router>
   );

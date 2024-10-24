@@ -15,21 +15,38 @@ function SymptomsCheck() {
     }
   };
 
-  const handleSubmit = () => {
-    navigate('/results', { state: { selectedSymptoms } });
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('/api/medicines/symptoms', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ symptoms: selectedSymptoms }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        navigate('/results', { state: { data } }); // 결과 페이지로 데이터 전달
+      } else {
+        throw new Error('데이터를 불러오는 데 실패했습니다.');
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div className="symptoms-check-container">
       <header className="symptoms-check-header">
         <Link to="/">
-          <img src="logo1.png" className="App-logo" alt="logo" />
+          <img src="/logo1.png" className="App-logo" alt="logo" />
         </Link>
       </header>
       <main className="symptoms-check-main">
         <h2 className="symptoms-title">어디가 불편하신가요?</h2>
         <div className="checkbox-group">
-          {['Fever', 'Cough', 'Headache', 'Fatigue'].map((symptom, index) => (
+          {['해열', '진통', '소염', '소화불량', '알레르기', '변비', '근육통', '구충제', '기침', '피로', '구강', '피부', '뼈'].map((symptom, index) => (
             <label
               key={symptom}
               className={`checkbox-container ${selectedSymptoms.includes(symptom) ? 'checked' : ''}`}

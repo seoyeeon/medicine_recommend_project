@@ -22,4 +22,11 @@
   .medicine-info-main {
     margin-top: 50px;
   }
+
+  .medicine-info-main img {
+    width: 100%; /* 가로 폭을 부모 요소에 맞춤 */
+    max-width: 40px; /* 최대 폭을 400px로 제한 */
+    height: auto; /* 비율을 유지하며 높이 자동 조정 */
+  }
+  
   
